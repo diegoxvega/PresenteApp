@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title><h6>Inicio de sesion</h6></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header class="ion-no-border">
+    <ion-toolbar>
+      <ion-title size="center"><h3 class="ion-text-center">Iniciar sesion</h3></ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  
+  <ion-list>
+    <ion-item>
+      <ion-input [(ngModel)]="username" label="usuario" labelPlacement="floating"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input [(ngModel)]="password" label="contraseña" labelPlacement="floating" type="password"></ion-input>
+    </ion-item>
+  </ion-list>
+
+
+  <ion-button [routerLink]="['/inicio']">
+    Ingresar cuenta
+  </ion-button>
+  <div class="ion-text-center">
+    <a class="a-link" [routerLink]="['/restablecer']">olvido la contraseña?
+    </a>
+  </div>
+ 
+</ion-content>
