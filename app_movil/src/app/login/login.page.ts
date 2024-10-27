@@ -10,33 +10,35 @@ import { ToastController } from '@ionic/angular';
 export class LoginPage implements OnInit {
   username!: string;
   password!: string;
+  loginService: any;
+
 
   constructor(
     private toastController: ToastController,
     private router: Router,
-  ) {}
+  ) {
+  }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
-  validateLogin() {
-    console.log("Ejecutando validación");
+  validateLogin(){
+    console.log("ejecutando validacion")
 
-    // Validar que el usuario sea 'admin' y la contraseña '12345'
-    if (this.username === 'admin' && this.password === '12345') {
+    if (
+      this.loginService.validateLogin(this.username, this.password)
+    ) {
       this.generateMessage('Login correcto', 'success');
-
-      // Navegación con NavigationExtras para pasar el nombre de usuario
       let extras: NavigationExtras = {
         state: { user: this.username }
-      };
-      this.router.navigate(['/home'], extras);  // Redirigir a la página de inicio
+      }
+      this.router.navigate(['/home'], extras);
     } else {
-      // Si el login falla, mostrar mensaje de error
-      this.generateMessage('Login fallido, credenciales incorrectas', 'danger');
+      this.generateMessage('Login fallido', 'danger');
     }
   }
 
-  async generateMessage(message: string, color: string) {
+  async generateMessage(message: string, color: string){
     const toast = await this.toastController.create({
       message: message,
       duration: 3000,
@@ -45,4 +47,5 @@ export class LoginPage implements OnInit {
     });
     await toast.present();
   }
+
 }

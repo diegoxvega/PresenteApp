@@ -1,35 +1,33 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title><h6>Inicio de sesión</h6></ion-title>
+    <ion-title><h6>Inicio de sesion</h6></ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header class="ion-no-border">
     <ion-toolbar>
-      <ion-title size="center"><h3 class="ion-text-center">Iniciar sesión</h3></ion-title>
+      <ion-title size="center"><h3 class="ion-text-center">Iniciar sesion</h3></ion-title>
     </ion-toolbar>
   </ion-header>
 
+  
   <ion-list>
     <ion-item>
-      <!-- Input para el username -->
-      <ion-input [(ngModel)]="username" label="Usuario" labelPlacement="floating"></ion-input>
+      <ion-input [(ngModel)]="username" label="usuario" labelPlacement="floating"></ion-input>
     </ion-item>
     <ion-item>
-      <!-- Input para la contraseña -->
-      <ion-input [(ngModel)]="password" label="Contraseña" labelPlacement="floating" type="password"></ion-input>
+      <ion-input [(ngModel)]="password" label="contraseña" labelPlacement="floating" type="password"></ion-input>
     </ion-item>
   </ion-list>
 
-  <!-- Llamar a validateLogin() cuando se presione el botón -->
-  <ion-button expand="block" (click)="validateLogin()">
+
+  <ion-button [routerLink]="['/inicio']">
     Ingresar cuenta
   </ion-button>
-
   <div class="ion-text-center">
-    <!-- Enlace para restablecer la contraseña -->
-    <a class="a-link" [routerLink]="['/restablecer']">¿Olvidó la contraseña?</a>
+    <a class="a-link" [routerLink]="['/restablecer']">olvido la contraseña?
+    </a>
   </div>
-
+ 
 </ion-content>
