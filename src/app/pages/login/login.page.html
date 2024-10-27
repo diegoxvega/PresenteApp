@@ -1,0 +1,37 @@
+<app-header [isNotHome]="isNotHome" [pageTitle]="pageTitle"></app-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-title color="primary" class="ion-text-center">
+      <ion-label>
+        
+      </ion-label>
+    </ion-card-title>
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="floating">Usuario</ion-label>
+        <ion-input  type="text"
+                    [(ngModel)]="user.username"
+                    pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"
+                    required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">Contraseña</ion-label>
+        <ion-input  type="password"
+                    [(ngModel)]="user.password"
+                    pattern="^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{4,6}$"
+                    required></ion-input>
+      </ion-item>
+    </ion-card-content>
+    <ion-button shape="block" (click)="ingresar()">Entrar</ion-button>
+  </ion-card>
+  <ion-footer>
+    <ion-toolbar color="blue">
+      <ion-buttons slot="end">
+        <ion-button class="container" [routerLink]="['/registro']">Registrarse</ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-footer>
+
+  <app-fab-menu></app-fab-menu>
+</ion-content>

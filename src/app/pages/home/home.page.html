@@ -1,0 +1,34 @@
+<app-header [isNotHome]="isNotHome" [pageTitle]="pageTitle"></app-header>
+
+<app-fab-menu></app-fab-menu>
+
+<ion-content [fullscreen]="true">
+  <ion-buttons>
+    <ion-button style="display: float" color="success" [routerLink]="['/login']" routerLinkActive="router-link-active">
+      <ion-icon name="log-in-outline"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+
+  <div id="container">
+    <img src="assets/img/Logo.PNG" alt="">
+    
+  </div>
+  
+  
+</ion-content>
+
+
+
+<ion-footer>
+  <ion-toolbar>
+          <div>
+              <ion-text>
+                  <h4 class="footer noMargin"><img [src]=weatherIcon class="img">{{ weatherTemp }}°</h4>
+              </ion-text>
+          
+              <ion-text>
+                  <h4 class="footer" style="margin-top: 8px;">{{ cityName }}, {{countryName}}</h4>
+              </ion-text>
+          </div>
+  </ion-toolbar>
+</ion-footer>
