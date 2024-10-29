@@ -3,6 +3,11 @@
 <app-fab-menu></app-fab-menu>
 
 <ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item lines="none">
+     bienvenido {{username}}
+    </ion-item>
+  </ion-list>
   <ion-buttons>
     <ion-button style="display: float" color="success" [routerLink]="['/login']" routerLinkActive="router-link-active">
       <ion-icon name="log-in-outline"></ion-icon>

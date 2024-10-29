@@ -30,7 +30,7 @@ export class HomePage implements OnInit{
   
   ngOnInit(): void {
     this.getLocation();
-    this.cargarLoading('Bienveido a fix inaitor');
+    this.cargarLoading('Bienveido a PresenteApp');
   }
 
    
